@@ -707,6 +707,11 @@ function preview(url, targetParams) {
 	} else {
 		newWindow = window.open(url, 'previewWin', targetParams);
 	}
+	if(!newWindow || newWindow.closed || typeof newWindow.closed=='undefined') {
+		$("#alertDialogMessage").html("pop-up window has been blocked for this site,Disable blocking pop-up windows to see the Site Preview");
+		alertDialog();
+		return false;
+	}
 	newWindow.focus();
 	void(0);
 	return false;
@@ -754,7 +759,7 @@ function setHTMLEditors() {
 			}
 
 			var toolbar= allPageTags[i].getAttribute('data-toolbar') || 'Default';
-			
+
 			$(document.getElementById(allPageTags[i].id)).ckeditor({
 				toolbar: toolbar,
 				customConfig: 'config.js.cfm'
