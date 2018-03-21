@@ -437,7 +437,12 @@ function validateForm(theForm) {
 	for(f = 0; f < frmInputs.length; f++) {
 		theField = frmInputs[f];
 		validationType = getValidationType(theField);
-
+		if(theField.id=='noSpaceInName'){
+			var space = theField.value.trim().split(' ');
+			if(space.length != 1){
+				errors += getValidationMessage(theField, ' contains spaces');
+			}
+		}
 		if(theField.style.display == "") {
 			if(getValidationIsRequired(theField) && theField.value == "") {
 				if(!started) {
