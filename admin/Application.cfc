@@ -166,10 +166,10 @@ component extends="framework" output="false" {
 
 	function onRequestStart() output="false"{
 
-		variables.framework.base="/muraWRM#application.configBean.getAdminDir()#/";
-		
 		include "../config/appcfc/onRequestStart_include.cfm";
 
+		variables.framework.base="/muraWRM#application.configBean.getAdminDir()#/";
+		
 		try{
 			if(not (structKeyExists(application.settingsManager,'validate') and application.settingsManager.validate() and isStruct(application.configBean.getAllValues()))){
 				application.appInitialized=false;
