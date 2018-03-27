@@ -87,10 +87,7 @@
 		jQuery(document).ready(function($){
 
 			$('input[name="isPublic"]').click(function(e){
-				e.preventDefault();
-				actionModal();
 				$('form#frmTemp input[name="setispublic"]').val($(this).val());
-				$('form#frmTemp').submit();
 			});
 
 		});
@@ -170,7 +167,7 @@
 						<h3 class="block-title">Basic Settings</h3>
 					</div> <!-- /.block header -->
 				</cfif>
-			
+
 				<div class="block-content">
 					<!---
 						Group Type
@@ -250,7 +247,7 @@
 				</div> <!-- /.block-content -->
 
 		<cfif rsSubTypes.recordcount or arrayLen(pluginEventMappings)>
-				</div> <!-- / tabBasic -->		
+				</div> <!-- / tabBasic -->
 			</div> <!-- /.tab-content block-content -->
 
 				<cfif rsSubTypes.recordcount>
@@ -288,7 +285,7 @@
 				</cfif>
 
 			</div> <!-- /.block-content.tab-content -->
-		
+
 			<div class="mura-actions">
 				<div class="form-actions">
 					<cfif rc.userid eq ''>
