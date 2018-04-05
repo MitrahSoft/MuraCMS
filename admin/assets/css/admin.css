@@ -32491,6 +32491,8 @@ font-size: 12px;
   /* IE7 inline-block hack */
   *zoom: 1;
   line-height: 1;
+  word-wrap:break-word;
+  width:75%;
 }
 .mura #cextend.ui-sortable li:hover {
   background: #e6e6e6 !important;
